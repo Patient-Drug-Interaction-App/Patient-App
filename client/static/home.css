@@ -1,0 +1,65 @@
+/* General body styling */
+body {
+  font-family: Arial, sans-serif; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between; 
+}
+
+/* Header styling */
+header {
+  background-color: #879eb5; /* Light grey background */
+  padding: 20px 10%;
+  text-align: center; /* Centers the text in the header */
+}
+
+/* Main content styling, centers the form */
+main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center; /* Aligns vertically center */
+  justify-content: center; /* Aligns horizontally center */
+}
+
+/* Form styling */
+form {
+  width: 300px; /* Sets a fixed width for the form */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the form items */
+}
+
+/* Input field styling */
+input[type="text"] {
+  width: 100%; /* Makes the input field take the full width of the form */
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer styling */
+footer {
+  background-color: #f8f9fa;
+  padding: 10px 10%;
+  text-align: center;
+}

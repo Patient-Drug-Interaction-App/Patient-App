@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
 
-app = Flask(__name__, template_folder='../client/templates', static_folder='../client/static')
+app = Flask(__name__, template_folder='../client/public', static_folder='../client/static')
 
 @app.route('/')
 def home():

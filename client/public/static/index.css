@@ -17,19 +17,29 @@ header {
 }
 
 /* Main content styling, centers the form */
-main {
-  flex-grow: 1;
-  display: flex;
-  align-items: center; /* Aligns vertically center */
-  justify-content: center; /* Aligns horizontally center */
-}
-
-/* Form styling */
-form {
-  width: 300px; /* Sets a fixed width for the form */
+#searchForm {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the form items */
+  align-items: center; 
+  justify-content: center; 
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+  transform: translateY(-50px);
+} 
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+main {
+  height: 100vh;
+  width: 300px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
 /* Input field styling */

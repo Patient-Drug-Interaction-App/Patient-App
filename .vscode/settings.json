@@ -1,0 +1,8 @@
+ // make .git visible to add workflows directory
+ 
+ {
+    "editor.tabSize": 4,
+    "files.exclude": {
+      "**/.git": false
+    }
+  }

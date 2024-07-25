@@ -2,12 +2,12 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
     event.preventDefault();
     const patientName = document.getElementById('patientName').value;
 
-    fetch('/search', {
+    fetch('/api/search', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ patientName: patientName })
+        body: JSON.stringify({ query: patientName })
     })
     .then(response => response.json())
     .then(data => {

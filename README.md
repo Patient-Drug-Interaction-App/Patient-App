@@ -7,3 +7,7 @@ List of tasks completed
 4) Dialed in CSS components for site to be easy to read
 5) changed user settings to make .git file viewable from gui in order to add a workflows directory and created a branch protections .yml as first CI/CD component
 6) Implemented Javascript for backend GET resquest
+
+Front end app using React to connect with Backend Patient App 
+
+Displays Search bar and connects to oracle private instance hosting an ADW 

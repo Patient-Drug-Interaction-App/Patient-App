@@ -7,6 +7,7 @@ List of tasks completed
 4) Dialed in CSS components for site to be easy to read
 5) changed user settings to make .git file viewable from gui in order to add a workflows directory and created a branch protections .yml as first CI/CD component
 6) Implemented Javascript for backend GET resquest
+7) Installed ESLint for syntax correction and finding problems in code for React framerwork running on a browser with npm package manager 
 
 Front end app using React to connect with Backend Patient App 
 

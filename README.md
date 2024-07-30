@@ -1,5 +1,11 @@
 # Patient-App Front end 
 
+Front end app using React to connect with Backend Patient App 
+
+Displays Search bar and connects to oracle private instance hosting an ADW 
+
+as of 7/26 deployed on OCI public instance 150.136.66.232
+
 List of tasks completed
 1) Initial planning: drew out architecture for how front end and back end will connect on Oracle side
 2) App set up: Created basic app structure using npx create-app client and added a backend just for testing. I also removed unnneccearry dependencies and files. Added differnt proxy in package.json for correct backend (see Patient App backen repo)
@@ -9,6 +15,4 @@ List of tasks completed
 6) Implemented Javascript for backend GET resquest
 7) Installed ESLint for syntax correction and finding problems in code for React framerwork running on a browser with npm package manager 
 
-Front end app using React to connect with Backend Patient App 
 
-Displays Search bar and connects to oracle private instance hosting an ADW 

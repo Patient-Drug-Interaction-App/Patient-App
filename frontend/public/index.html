@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  </title>
+    <title> Drug Interaction App </title>
     <link rel="stylesheet" href="./static/index.css">
+    <script src="../src/search_handler.js" defer></script>
+    <script src="../src/App.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,8 +17,8 @@
     <h1 >Patient Search</h1>
     <form id="searchForm">
         <label for="patientName">Patient Name:</label>
-        <input type="text" id="patientName" name="patientName">
-        <button type="submit">Search</button>
+        <input type="text" id="searchInput"  placeholder="Enter Patient Name ...">
+        <button type="button">Search</button>
     </form>
 
     <!-- Results container -->
@@ -26,6 +28,6 @@
         <p> 2024 Drug Interaction Database</p>
     </footer>
 
-    <script src="../src/search_handler.js"></script>
+   
 </body>
 </html>

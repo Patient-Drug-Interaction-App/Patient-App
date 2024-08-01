@@ -1,47 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import './public/static/index.css'
 
 function App() {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/search")
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return res.json();
-      })
-      .then(data => {
-        setData(data);
-        setIsLoading(false);
-        console.log(data);
-      })
-      .catch(error => {
-        setError(error.message);
-        setIsLoading(false);
-        console.log(error);
-      });
-  }, []);
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-
   return (
     <div>
       <h1>Search Results</h1>
-      {data.length > 0 ? (
-        <ul>
-          {data.map(item => (
-            <li key={item.id}>{item.name}</li> // Adjust key and item properties based on your data structure
-          ))}
-        </ul>
-      ) : (
-        <p>No results found.</p>
-      )}
+      <form id="searchForm">
+        <label htmlFor="searchInput">Search:</label>
+        <input type="text" id="searchInput" placeholder="Enter search term..." />
+        <button type="button" onClick={performSearch}>Search</button>
+      </form>
+      <div id="searchResults"></div>
     </div>
   );
+}
+
+function performSearch() {
+  const input = document.getElementById('searchInput');
+  const resultsContainer = document.getElementById('searchResults');
+  const query = input.value;
+
+  fetch(`/api/search?query=${encodeURIComponent(query)}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      resultsContainer.innerHTML = '';
+      if (data.length > 0) {
+        data.forEach(item => {
+          const resultItem = document.createElement('div');
+          resultItem.textContent = item.name; // Adjust based on your data structure
+          resultsContainer.appendChild(resultItem);
+        });
+      } else {
+        resultsContainer.textContent = 'No results found.';
+      }
+    })
+    .catch(error => {
+      resultsContainer.textContent = `Error: ${error.message}`;
+    });
 }
 
 export default App;

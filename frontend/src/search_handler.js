@@ -2,20 +2,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('searchForm');
     const input = document.getElementById('searchInput');
     const button = form.querySelector('button');
+    const resultsContainer = document.getElementById('searchResults'); // Ensure this matches your HTML
 
     button.addEventListener('click', function(event) {
         event.preventDefault(); 
         const query = input.value;
-        performSearch(query);
+        button.disabled = true; // Disable button during the search
+        resultsContainer.textContent = 'Loading...'; // Feedback for loading
+        performSearch(query).finally(() => {
+            button.disabled = false; // Re-enable button after search
+        });
     });
 });
 
 function performSearch(query) {
-    // Explicitly set the URL to the backend server
     const url = new URL('http://10.0.1.3:8000/search');
-    url.searchParams.append('query', query); // Append the query parameter as expected by the backend
+    url.searchParams.append('query', query);
 
-    fetch(url)
+    return fetch(url)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error: Status ${response.status}`);
@@ -33,13 +37,13 @@ function performSearch(query) {
 }
 
 function updateResults(data) {
-    const resultsContainer = document.getElementById('results');
-    resultsContainer.innerHTML = ''; // Clear previous results
+    const resultsContainer = document.getElementById('searchResults');
+    resultsContainer.innerHTML = '';
 
     if (data && data.length > 0) {
         data.forEach(item => {
             const resultItem = document.createElement('div');
-            resultItem.textContent = item.NAME; // Adjust based on your data structure, assuming 'NAME' is a key
+            resultItem.textContent = item.NAME; // Adjust based on your data structure
             resultsContainer.appendChild(resultItem);
         });
     } else {
@@ -48,6 +52,6 @@ function updateResults(data) {
 }
 
 function displayResultsError() {
-    const resultsContainer = document.getElementById('results');
+    const resultsContainer = document.getElementById('searchResults');
     resultsContainer.textContent = 'Failed to fetch results.';
 }

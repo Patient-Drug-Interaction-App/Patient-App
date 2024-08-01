@@ -4,5 +4,9 @@
     "eslint": "^9.8.0",
     "eslint-plugin-react": "^7.35.0",
     "globals": "^15.8.0"
-  }
+  } , 
+"scripts": {
+  "build": "shx rm -rf build/ && shx cp -r public/* build/"
+}
+
 }

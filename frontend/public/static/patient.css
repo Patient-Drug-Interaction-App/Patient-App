@@ -1,0 +1,25 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between; 
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #879eb5; /* Light grey background */
+    padding: 20px 10%;
+    text-align: center; /* Centers the text in the header */
+  }
+
+  /* Footer styling */
+footer {
+    background-color: #f8f9fa;
+    padding: 10px 10%;
+    text-align: center;
+  }
+  
